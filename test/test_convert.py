@@ -77,12 +77,24 @@ class StringConverterTestCase(unittest.TestCase):
       converter.convert_to_list_of_strings('camelCase'),
       ['camel', 'case']
     )
+
+  def test_camel_to_list_three_words(self):
+    self.assertEqual(
+      converter.convert_to_list_of_strings('camelCaseExample'),
+      ['camel', 'case', 'example']
+    )
   # endregion: convert_camel_case_to_list.
   # region: convert_snake_case_to_list.
   def test_snake_to_list_two_words(self):
     self.assertEqual(
       converter.convert_to_list_of_strings('snake_case'),
       ['snake', 'case']
+    )
+
+  def test_snake_to_list_three_words(self):
+    self.assertEqual(
+      converter.convert_to_list_of_strings('snake_case_example'),
+      ['snake', 'case', 'example']
     )
   # endregion: convert_snake_case_to_list.
 

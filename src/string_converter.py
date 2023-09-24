@@ -94,7 +94,7 @@ def convert_to_list_of_strings(name:str):
   if ((is_camel_case and is_snake_case)
       or
       (not (is_camel_case or is_snake_case))):
-    raise ValueError('Cant handle non-snake or camel case.')
+    raise ValueError('Cant handle non- snake or camel case.')
 
   if is_camel_case:
     return _convert_camel_case_to_list(name)

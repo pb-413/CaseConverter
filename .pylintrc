@@ -1,3 +1,6 @@
+# One of many guides I'm sure:
+# https://www.codeac.io/documentation/pylint-configuration.html
+
 # String used as indentation unit.
 # This is usually "    " (4 spaces) or "\t" (1 tab).
 # I am using '  ' (2 spaces).

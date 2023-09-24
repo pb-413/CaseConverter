@@ -115,5 +115,7 @@ class StringConverterTestCase(unittest.TestCase):
       converted_string,
       expected_string
     )
+
+
 if __name__ == '__main__':
   unittest.main()

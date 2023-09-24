@@ -99,12 +99,21 @@ class StringConverterTestCase(unittest.TestCase):
   # endregion: convert_snake_case_to_list.
 
   def test_convert_snake_to_camel(self):
-    start_string = 'snake_case_example'
-    self.assertTrue(True)
+    start_string = 'snake_case_to_camel_case_example'
+    converted_string = converter.convert(start_string)
+    expected_string = 'snakeCaseToCamelCaseExample'
+    self.assertEqual(
+      converted_string,
+      expected_string
+    )
 
   def test_convert_camel_to_snake(self):
-    start_string = 'camelCaseExample'
-    self.assertTrue(True)
-
+    start_string = 'camelCaseToSnakeCaseExample'
+    converted_string = converter.convert(start_string)
+    expected_string = 'camel_case_to_snake_case_example'
+    self.assertEqual(
+      converted_string,
+      expected_string
+    )
 if __name__ == '__main__':
   unittest.main()

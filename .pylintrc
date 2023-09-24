@@ -1,0 +1,9 @@
+# String used as indentation unit.
+# This is usually "    " (4 spaces) or "\t" (1 tab).
+# I am using '  ' (2 spaces).
+indent-string='  '
+
+# Number of spaces of indent required inside a hanging
+# or continued line.
+# For this, I like 4 spaces.
+indent-after-paren=4

@@ -70,17 +70,17 @@ def _convert_camel_case_to_list(text:str):
         index_of_this_cap
       )
       start_index = index_of_this_cap + 1
-  print("step 1, indexes of caps:", indexes_of_caps)
+  # print("step 1, indexes of caps:", indexes_of_caps)
   # TODO good test case coverage of this index shinanigans.
   list_of_words = []
   start_index = 0
   for index in indexes_of_caps:
-    print ("start_index", start_index, "- type:", type(start_index),
-           "\nindex:", index, "- type:", type(index))
+    # print ("start_index", start_index, "- type:", type(start_index),
+    #        "\nindex:", index, "- type:", type(index))
     list_of_words.append(text[start_index:index].lower())
     start_index = index
   list_of_words.append(text[start_index:].lower())
-  print("step 2, list of words:", list_of_words)
+  # print("step 2, list of words:", list_of_words)
   return list_of_words
 
 def _convert_snake_case_to_list(text:str):
@@ -102,12 +102,22 @@ def convert_to_list_of_strings(name:str):
   if is_snake_case:
     return _convert_snake_case_to_list(name)
 
-def convert(text:str):
+def convert(text:str, target:str='snake'):
+  available_conversions = ('snake', 'camel')
+  if target not in available_conversions:
+    raise ValueError(f'can only convert to these: {available_conversions}')
+  list_of_words_lower_case = convert_to_list_of_strings(text)
   finished_list_of_words = []
-  # Conditional convert to snake_case.
-  if has_caps and not has_underscores:
-    words = text.split() # Split on capitals?
+  joiner = ''
+  if target == 'camel':
+    finished_list_of_words.append(list_of_words_lower_case.pop(0))
+    for word in list_of_words_lower_case:
+      finished_list_of_words.append(word.capitalize())
+  else: # target == 'snake':
+    finished_list_of_words = list_of_words_lower_case
+    joiner = '_'
 
+  return joiner.join(finished_list_of_words)
 
 def run():
   _convert_camel_case_to_list('camelCase')

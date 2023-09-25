@@ -100,7 +100,7 @@ class StringConverterTestCase(unittest.TestCase):
 
   def test_convert_snake_to_camel(self):
     start_string = 'snake_case_to_camel_case_example'
-    converted_string = converter.convert(start_string)
+    converted_string = converter.convert(start_string, 'camel')
     expected_string = 'snakeCaseToCamelCaseExample'
     self.assertEqual(
       converted_string,
